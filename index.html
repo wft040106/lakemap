@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>时间序列地图</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@7.4.0/ol.css">
+  <link rel="stylesheet" href="style.css"
+</head>
+<body>
+  <div id="map">
+      <div class="map-controls">
+    <select id="baseLayerSelector">
+      <option value="OpenStreetMap">街道地图</option>
+      <option value="ArcGIS影像">卫星影像</option>
+    </select>
+  </div>
+  </div>
+  <div id="sliderContainer">
+    <button id="playPauseBtn">⏸</button> <!-- 初始为正在播放 -->
+    <input type="range" id="timeSlider" min="0" max="0" value="0">
+    <span id="timeLabel">-</span>
+  </div> 
+  <div id="echart">
+    <div id="Chart1"></div>
+    <div id="Chart2"></div>
+    <div id="Chart3"></div>
+    <div id="Chart4"></div>
+  </div> 
+  <div id="title">
+  <p class="main-title">时间的水痕</p>
+  <p class="subtitle">——青海湖35年湖域变迁图谱</p>
+  </div>
+  <div id="text">
+  <h3 class="texttitle">时间的水痕</h3>
+  <p id="lakeinfo"></p>
+  </div>
+  <button id="playBtn">▶ 播放音乐</button>
+<audio id="myAudio">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+  
+  <script src="https://cdn.jsdelivr.net/npm/ol@7.4.0/dist/ol.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="script.js">
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,195 @@
+html, body,
+#map {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: relative; /* 新增：为绝对定位子元素提供参照 */
+}
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: rgba(255,255,255,0.8);
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#text {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #17375E;
+  line-height: 1.6;
+}
+.texttitle{
+  font-size: 24px;
+  font-weight: bold;
+  color: #17375E;
+  text-align: center;
+  text-align: left;   /* 👈 左对齐 */
+  margin-top: 0;      /* 去除默认的 h3 顶部间距 */
+  margin-bottom: 10px;
+}
+
+
+#echart {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* 从左改为右 */
+  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  padding: 250px 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 建议使用黑色阴影效果更明显 */
+  z-index: 1000;
+  min-width: 300px;
+}
+#Chart1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#Chart2 {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  z-index: 10;
+  background-color:rgba(0, 0, 0, 0.1);
+}
+#Chart3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#Chart4 {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#title {
+position: fixed;
+  top: 20px;
+  left: 20px; /* 从左改为右 */
+  background: rgba(255, 255, 255, 0.5) url('bg.png') no-repeat center / cover; /* 半透明白色背景 */
+  background-size: cover;         /* 背景图填满 */
+  height: 140px;              /* 明确高度 */
+  padding: 20px 45px 10px;    /* 上下左右分别设置 */
+  overflow: hidden;           /* 可防止内容溢出 */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 建议使用黑色阴影效果更明显 */
+  z-index: 1000;
+  min-width: 300px;
+  opacity: 1; /* 0.0~1.0 */
+}
+
+#title .main-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.95); /* 半透明白色 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* 黑色阴影 */
+  margin: 0;
+  text-align: left;
+}
+#title .subtitle {
+  font-size: 24px;
+  font-style: bold;
+  color: rgba(255, 255, 255, 0.8); /* 半透明白色 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* 黑色阴影 */
+  margin-top: 4px;
+  text-align: right;
+}
+
+#sliderContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(237, 237, 237, 0.1);
+  z-index: 1000;
+  min-width: 300px;
+  text-align: center;
+}
+
+#sliderContainer input[type="range"] {
+  width: 100%;
+  margin: 0;
+}
+
+#sliderContainer .date-display {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* 如果是时间轴/进度条本身的样式 */
+#sliderContainer input[type="range"] {
+  width: 100%;
+  margin: 0;
+}
+
+#sliderContainer .date-display {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+.ol-zoom {
+  position: absolute;
+  bottom: 170px;
+  right: 20px;
+  left: auto;
+  top: auto;
+  z-index: 999;
+}
+
+#baseLayerSelector {
+  position: fixed;
+  bottom: 170px;
+  right: 60px; /* 从左改为右 */
+  padding: 5px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+#playBtn {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
